@@ -12,6 +12,17 @@ module.exports = {
   devServer: {
     disableHostCheck: true,
     port: 88,
-    host: "0.0.0.0"
+    host: "0.0.0.0",
+    proxy: {
+      // proxy在这里是vue-cli3的写法，在vue-cli2中为proxyTable
+      "^/api": {
+        target: process.env.VUE_APP_ADMIN_API_DOMAIN,
+        secure: false, // 若接口地址为https需配置这个
+        changeOrigin: true,
+        pathRewrite: {
+          "^/api": "/"
+        }
+      }
+    }
   }
 };
