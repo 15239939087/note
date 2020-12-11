@@ -9,12 +9,12 @@
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.el-table {
+  width: 100% !important;
+}
+.el-table--border th.gutter:last-of-type {
+  display: block !important;
+  width: 17px !important;
 }
 
 #nav {

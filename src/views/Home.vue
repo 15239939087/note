@@ -1,23 +1,27 @@
 <template>
-  <div class="home"></div>
+  <div>
+    <button v-on:click="getInfo()">点击获取数据</button>
+    <p>{{ infoList }}</p>
+  </div>
 </template>
 
 <script>
-import axios from "axios";
-// import APIConfig from "@/common/config/api";
+import { getTableInfo } from "@/common/service";
 export default {
   name: "Home",
-  created() {
-    this.getData();
+  data() {
+    return {
+      infoList: ""
+    };
   },
   methods: {
-    getData() {
-      const params = {
-        name: "杨幂"
-      };
-      axios.get("api/table/list", { params }).then(res => {
-        console.log(res);
-      });
+    getInfo() {
+      this.getData();
+    },
+    async getData() {
+      let res = await getTableInfo();
+      this.infolist = res.data.data.list;
+      console.log(res);
     }
   }
 };
