@@ -1,0 +1,8 @@
+@import "~element-ui/lib/theme-chalk/index.css";
+.el-table {
+  width: 100% !important;
+}
+.el-table--border th.gutter:last-of-type {
+  display: block !important;
+  width: 17px !important;
+}
