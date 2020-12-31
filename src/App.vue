@@ -1,4 +1,5 @@
 <template>
+  <!-- 根目录 -->
   <div id="app">
     <router-view />
   </div>
