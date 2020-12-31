@@ -1,6 +1,7 @@
 <template>
   <div>
     <button v-on:click="getInfo()">点击获取数据</button>
+    <Button></Button>
     <p>{{ infoList }}</p>
   </div>
 </template>
