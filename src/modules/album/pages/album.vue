@@ -13,6 +13,7 @@
 <script>
 import CommonTable from "@/common/components/table/CommonTable";
 import { Constants } from "../config";
+import api from "../services";
 export default {
   name: "album",
   components: {
@@ -38,8 +39,17 @@ export default {
         "row-key": "qipuId"
       },
       // 列表数据
-      tableList: Constants.TableList
+      tableList: []
     };
+  },
+  created() {
+    this.getList();
+  },
+  methods: {
+    async getList() {
+      const result = await api.getAlbumList();
+      this.tableList = result.data;
+    }
   }
 };
 </script>

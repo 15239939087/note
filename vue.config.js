@@ -1,9 +1,13 @@
 const path = require("path");
 
-module.exports = {
+const config = {
   publicPath: "./",
   configureWebpack: () => ({
-    entry: path.resolve(__dirname, "src/main.js")
+    entry: path.resolve(__dirname, "src/main.js"),
+    output: {
+      filename: `js/[name].js`,
+      chunkFilename: `js/[name].js`
+    }
   }),
   devServer: {
     disableHostCheck: true,
@@ -11,3 +15,4 @@ module.exports = {
     host: "0.0.0.0"
   }
 };
+module.exports = config;
