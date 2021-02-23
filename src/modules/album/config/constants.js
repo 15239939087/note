@@ -26,6 +26,13 @@ const AlbumColumnList = [
     "min-width": 30
   },
   {
+    label: "头像",
+    name: "avatar",
+    slotName: "avatar",
+    hidden: false,
+    "min-width": 30
+  },
+  {
     label: "创建人",
     name: "createUserName",
     prop: "createUserName",

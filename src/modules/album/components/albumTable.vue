@@ -5,7 +5,23 @@
     :transfer-config="transferConfig"
     :table-property="tableProperty"
     :data="tableList"
-  ></common-table>
+  >
+    <template slot="avatar" slot-scope="{ row }">
+      <el-popover placement="right" trigger="click" transition="fade-in-linear">
+        <img
+          :src="row.avatarUrl"
+          alt=""
+          v-if="row.avatarUrl"
+          class="bigAvatar"
+        />
+        <span v-else>暂无编目位置信息</span>
+        <div v-if="row.avatarUrl" slot="reference" class="avatar">
+          <img :src="row.avatarUrl" />
+        </div>
+        <span v-else slot="reference">-</span>
+      </el-popover>
+    </template>
+  </common-table>
 </template>
 
 <script>
@@ -49,4 +65,25 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.avatar {
+  position: relative;
+  left: 25%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  border: 1px dashed #d9d9d9;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.avatar img {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bigAvatar {
+  max-width: 500px;
+}
+</style>

@@ -92,7 +92,6 @@ export default {
       if (type === "cancel") {
         this.$emit("cancel");
       } else {
-        console.log(this.dragColums);
         this.$emit("confirm");
       }
     },
@@ -118,15 +117,12 @@ export default {
     },
     // 拖动 tag 触发
     dragChange() {
-      console.log(123);
       this.showColunmList.forEach(item => {
         this.dragColums[item.name] = { ...item, hidden: false };
       });
       this.hiddenColunmList.forEach(item => {
         this.dragColums[item.name] = { ...item, hidden: true };
       });
-      console.log(this.dragColums);
-      console.log(this.hiddenColunmList);
     }
   }
 };

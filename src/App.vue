@@ -1,6 +1,6 @@
 <template>
   <!-- 根目录 -->
-  <div id="app">
+  <div>
     <router-view />
   </div>
 </template>

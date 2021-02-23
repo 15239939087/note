@@ -19,6 +19,11 @@ const routes = [
     path: "/album",
     name: "Album",
     component: () => import("../modules/album/pages/album")
+  },
+  {
+    path: "/video",
+    name: "Video",
+    component: () => import("../modules/video/pages/video")
   }
 ];
 
