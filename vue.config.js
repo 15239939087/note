@@ -1,7 +1,7 @@
 const path = require("path");
 
 const config = {
-  publicPath: "/demo",
+  publicPath: "./",
   configureWebpack: () => ({
     entry: path.resolve(__dirname, "src/main.js"),
     output: {
