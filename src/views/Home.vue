@@ -2,12 +2,17 @@
   <div>
     <button v-on:click="getInfo()">点击获取数据</button>
     <Button></Button>
+
     <el-autocomplete
       v-model="state"
       :fetch-suggestions="querySearchAsync"
       placeholder="请输入内容"
       @select="handleSelect"
     ></el-autocomplete>
+    <Br />
+    <router-link to="/about">About</router-link>
+    <Br />
+    <router-link to="/album">Album</router-link>
   </div>
 </template>
 
